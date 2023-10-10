@@ -4,7 +4,7 @@ import { Cardcontainer } from './Components/Cardcontainer'
 function App() {
 return(
   <>
-   <Cardcontainer></Cardcontainer>
+   <div className='flex justify-center items-center mt-11'><Cardcontainer></Cardcontainer></div>
   </>
 )
 }
