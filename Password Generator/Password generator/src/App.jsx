@@ -49,11 +49,7 @@ function App() {
       document.querySelector("button").innerHTML="Copy"
       },1000);
    }
-   
-   
-
- 
-
+  
   return (
     <>
      {/* main div */}
