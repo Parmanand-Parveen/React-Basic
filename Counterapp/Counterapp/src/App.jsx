@@ -7,13 +7,27 @@ function App() {
   const [count, setCount] = useState(0)
   
   function subtractValue(){
-    if(count>0){
-        setCount(count-1)
+    if(count<=0){
+        let msg = "You can't go below 0"
+        let no = document.querySelector(".no")
+        no.innerHTML = msg
+        setTimeout(() => {
+          no.innerHTML = ""
+        }, 5000);
+
     }
+    else
+    setCount(count-1)
   }
   function addValue(){
     if(count>=20){
-        alert("You can't go above 20")
+        //  alert("You can't go above 20");
+     let msg = "You can't go above 20"
+     let no = document.querySelector(".no")
+     no.innerHTML = msg
+     setInterval(() => {
+      no.innerHTML = ""
+     }, 5000);
     }
     else
     setCount(count+1)
@@ -22,6 +36,7 @@ function App() {
 
   return (
     <>
+    <p className='no'></p>
     <button onClick={addValue}>
       Add value
     </button>
