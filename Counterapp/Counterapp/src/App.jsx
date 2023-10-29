@@ -12,9 +12,11 @@ function App() {
     }
   }
   function addValue(){
-    if(count<20){
-        setCount(count+1)
+    if(count>=20){
+        alert("You can't go above 20")
     }
+    else
+    setCount(count+1)
   }
 
 
