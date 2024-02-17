@@ -6,19 +6,20 @@ function Inputbox() {
   const [amount, setAmount] = useState()
   const [to, setTo] = useState("inr")
   const [from, setFrom] = useState("usd")
-  const [convertedamount, setConvertedamount] = useState(0)
-  const cureencyInfo = useCurrencyInfo(from)
-  const options= Object.keys(cureencyInfo)
+  const [convertedamount, setConvertedamount] = useState()
+  const currencyInfo = useCurrencyInfo(from)
+  const options= Object.keys(currencyInfo)
   
   const swap = ()=>{
     setFrom(to)
     setTo(from)
-    setConvertedamount(amount)
-    setAmount(convertedamount)
+    // setConvertedamount(amount)
+    // setAmount(convertedamount)
   }
-  console.log(cureencyInfo)
+  console.log(currencyInfo)
 
-  const convert =() => {setConvertedamount(amount * cureencyInfo[to])}
+  const convert =() => {setConvertedamount(amount * currencyInfo[to])}
+  console.log(currencyInfo[to])
   return (
     <div className='bg-slate-500 h-fit p-4 relative flex flex-col rounded gap-2'  >
   <Inputform
